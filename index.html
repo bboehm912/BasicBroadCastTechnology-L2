@@ -557,10 +557,6 @@ function renderForm(fields) {
       inputHTML = `<input type="date" id="${id}" ${field.required ? 'required' : ''} />`;
     } else if (field.type === 'rating_scale') {
       inputHTML = `<select id="${id}">${(field.options || []).map(o => `<option>${o}</option>`).join('')}</select>`;
-    } else if (field.type === 'quote_citation') {
-      inputHTML = `<textarea id="${id}" rows="3" ${field.required ? 'required' : ''}></textarea>`;
-    } else if (field.type === 'select_rubric') {
-      inputHTML = `<select id="${id}"><option>-- Select Rubric Benchmark Level --</option>${(field.options || []).map(o => `<option>${o}</option>`).join('')}</select>`;
     } else if (field.type === 'checkbox_group' || field.type === 'multi_select') {
       inputHTML = (field.options || []).map(o => `<label><input type="checkbox" name="${id}" value="${o}" /> ${o}</label>`).join('<br/>');
     }
